@@ -2,33 +2,32 @@ package Test;
 
 import static org.junit.Assert.*;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
+import main.Employee;
+import main.EmployeeType;
 
 public class EmployeeTest {
-
-	@BeforeClass
-	public static void setUpBeforeClass() throws Exception {
-	}
-
-	@AfterClass
-	public static void tearDownAfterClass() throws Exception {
-	}
-
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
-
+	
+	/* Calcula el salario de un Manager cuando el salario base es de $150
+	 * dolares americanos y el mes es par. Es decir 23 de Agosto = 8 PAR
+	 */
 	@Test
-	public void test() {
-		fail("Not yet implemented");
-	}
+	 public void csManagerParUSDTest() {
+		 Employee e = new Employee(150f, "USD", 1f, EmployeeType.Manager);
+		 float salarioactual = e.cs();
+		 float salarioEsperado = 150.7f;
+		 assertEquals(salarioactual, salarioEsperado, 0.1);
+	 }
+	
+	/* Calcula el salario de un Supervisor cuando el salario base es de $100
+	 * dolares americanos y el mes es par. Es decir 23 de Agosto = 8 PAR
+	 */
+	@Test
+	 public void csSupervisorParUSDTest() {
+		 Employee e = new Employee(100f, "USD", 1f, EmployeeType.Supervisor);
+		 float salarioactual = e.cs();
+		 float salarioEsperado = 100.35f;
+		 assertEquals(salarioactual, salarioEsperado, 0.1);
+	 }
 
 }
