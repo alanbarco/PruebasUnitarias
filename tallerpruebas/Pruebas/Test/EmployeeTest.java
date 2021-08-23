@@ -32,7 +32,7 @@ public class EmployeeTest {
 	
 
 
-	/* Calcula el salario de un Supervisor cuando el salario base es de $200
+	/* Calcula el salario de un Worker cuando el salario base es de $200
 	 * dolares americanos y el mes es par. Es decir 23 de Agosto = 8 PAR
 	 */
 	@Test
