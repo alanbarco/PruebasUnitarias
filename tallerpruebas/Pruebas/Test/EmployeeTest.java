@@ -67,6 +67,33 @@ public class EmployeeTest {
 		 float salarioEsperado = 1014.6833f;
 		 assertEquals(salarioactual, salarioEsperado, 0.1);
 	 }
+	 
+	 
+	 /*
+		 * Calcula el bono de fin de anio de un Employee Supervisor 
+		 * cuando la moneda es USD ##
+		 */
+		 @Test
+		 public void CalculateYearBonusSupevisorUSDTest() {
+			  Employee e = new Employee(100f, "USD", 1f, EmployeeType.Supervisor);
+			  float bonoEsperado = 293.0f;
+			  float bonoActual = e.CalculateYearBonus();
+			  assertEquals(bonoActual, bonoEsperado, 0.1);
+		 }
+	 /*
+		 * Calcula el bono de fin de año de un Employee Worker 
+		 * cuando la moneda es USD.#
+		 */
+		 @Test
+		 public void CalculateYearBonusWorkerUSDTest() {
+			 Employee  e = new Employee(100f, "USD", 1f, EmployeeType.Worker);
+			 float bonoActual = e.CalculateYearBonus();
+			 float bonoEsperado = 386.0f;
+			 assertEquals(bonoActual, bonoEsperado, 0.1);
+			 
+
+		 }
+	 
 	 /*
 		 * Calcula el bono de fin de aÃ±o de un Employee Manager cuando su salario es 1500 y el currency es USD
 		 */
@@ -96,5 +123,19 @@ public class EmployeeTest {
 		 float BonoAnual = e.CalculateYearBonus() ;
 		 float bonoesperado = 3000f +(386f*0.5f);
 		 assertEquals(bonoesperado, BonoAnual, 0.1);
-	 }
+		 
+		 	 }
+	 
+	 /*
+		* Test que prueba que el método CalculateYearBonus calcule de forma
+		* correcta el bono de fin de año de un empleado Supervisor que tenga como
+		* salario 100 Euros y 1 de bonusPercentaje
+		*/
+	    @Test
+	    public void CalculateYearBonusTest5() {
+	    	Employee  e = new Employee(100f, "EUR", 1f, EmployeeType.Supervisor);
+	    	float bonoEsperado = 288.0f;
+			float bonoActual = e.CalculateYearBonus();
+			assertEquals( bonoActual, bonoEsperado, 0.1);
+	    }
 }
