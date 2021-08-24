@@ -138,4 +138,32 @@ public class EmployeeTest {
 			float bonoActual = e.CalculateYearBonus();
 			assertEquals( bonoActual, bonoEsperado, 0.1);
 	    }
+	    
+	    /*
+		 * Calcula el salario de un Employee Manager cuando su salario base es de 300 EUR la moneda 
+		 * y el mes es impar. Se prueba con Agosto = 8 PAR
+		 */
+		 @Test
+		 public void csManagerEURParTest() {
+			 Employee e = new Employee(300f, "EUR", 1f, EmployeeType.Worker);
+			 float salarioactual = e.cs();
+			 float salarioEsperado = 285.7f;
+			 assertEquals(salarioactual, salarioEsperado, 0.1);
+		 }
+		 /*
+			 * Calcula el bono de fin de anio de un Employee Manager 
+			 * cuando la moneda es Eur ##
+			 */
+			 @Test
+			 public void CalculateYearBonusManagerEURTest() {
+				  Employee e = new Employee(200f, "EUR", 1f, EmployeeType.Manager);
+				  float bonoEsperado = 686.0f;
+				  float bonoActual = e.CalculateYearBonus();
+				  assertEquals(bonoActual, bonoEsperado, 0.1);
+			 }
+		 
+		 
+	    
+	    
+	    
 }
